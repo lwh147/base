@@ -1,4 +1,4 @@
-package com.lwh147.proxy;
+package com.lwh147.design.proxy;
 
 /**
  * TODO
