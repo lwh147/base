@@ -1,7 +1,7 @@
 package com.lwh147.temp;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 /**
  * TODO
@@ -11,15 +11,30 @@ import java.util.List;
  **/
 public class Test {
     public static void main(String[] args) {
-        List<Integer> integerList = new ArrayList<>();
-        integerList.add(1);
-        integerList.add(2);
-        integerList.add(-123);
-        integerList.add(-1);
-        integerList.add(123);
-        integerList.stream().sorted(Integer::compareTo).forEach(System.out::println);
+        // Hashtable table = new Hashtable();
+        // HashMap map = new HashMap();
+        // String s = new String();
+        // System.out.println(new Integer(-1).hashCode());
 
-        test1();
+        // 容量
+        // int n = 16;
+        // 随机关键码
+        // final Random random = new Random();
+
+        // for (int i=0; i<100; i++) {
+        //     // 必须为正整数
+        //     int hash = random.nextInt() & 0x7FFFFFFF;
+        //     int result1 = hash % n;
+        //     int result2 = hash & (n - 1);
+        //     System.out.println(result1 == result2);
+        // }
+
+        // Integer int1 = 10, int2 = 11;
+        // System.out.println(int2 == 11);
+
+
+        // test2();
+        test3();
     }
 
     public static void test1() {
@@ -34,5 +49,17 @@ public class Test {
         });
         System.out.println("执行了最后");
         list.forEach(System.out::println);
+    }
+
+    public static void test2() {
+        List<String> list = new ArrayList<>();
+        list.add("2");
+        list.add(null);
+        list.add("1");
+        list.stream().filter(o -> "1".equals(o.trim())).forEach(System.out::println);
+    }
+
+    public static void test3() {
+        System.out.println(new BigDecimal("0.00").negate().toPlainString());
     }
 }
