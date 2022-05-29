@@ -1,7 +1,10 @@
 package com.lwh147.temp;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.List;
 
 /**
  * TODO
@@ -31,7 +34,25 @@ public class Test {
 
         // Integer int1 = 10, int2 = 11;
         // System.out.println(int2 == 11);
-
+        // log.info("^ 运算：{}", 15 & ("郭德纲".hashCode() ^ ("郭德纲".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("彭于晏".hashCode() ^ ("彭于晏".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("李小龙".hashCode() ^ ("李小龙".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("张三".hashCode() ^ ("张三".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("李四".hashCode() ^ ("李四".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("王五".hashCode() ^ ("王五".hashCode() >>> 16)));
+        // log.info("^ 运算：{}", 15 & ("赵六".hashCode() ^ ("赵六".hashCode() >>> 16)));
+        //
+        // log.info("同或运算：{}", 15 & ~("郭德纲".hashCode() ^ ("郭德纲".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("彭于晏".hashCode() ^ ("彭于晏".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("李小龙".hashCode() ^ ("李小龙".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("张三".hashCode() ^ ("张三".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("李四".hashCode() ^ ("李四".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("王五".hashCode() ^ ("王五".hashCode() >>> 16)));
+        // log.info("同或运算：{}", 15 & ~("赵六".hashCode() ^ ("赵六".hashCode() >>> 16)));
+        Hashtable table = new Hashtable();
+        HashMap map = new HashMap();
 
         // test2();
         test3();
