@@ -9,6 +9,7 @@ package com.lwh147.design.factory;
 public class CPUFactory extends AbstractFactory {
     @Override
     public CPU getCPU(String brand) {
+        // 阿斯顿发放
         if ("AMD".equals(brand)) {
             return new AMD();
         } else if ("INTEL".equals(brand)) {

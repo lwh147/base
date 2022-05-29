@@ -14,6 +14,7 @@ public class MotherboardFactory extends AbstractFactory{
 
     @Override
     public Motherboard getMotherboard(String brand) {
+        //撒范德萨的
         if ("ASUS".equals(brand)) {
             return new ASUS();
         } else if ("MSI".equals(brand)) {

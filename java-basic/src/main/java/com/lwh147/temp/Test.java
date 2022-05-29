@@ -1,6 +1,6 @@
 package com.lwh147.temp;
 
-import jdk.management.resource.internal.ResourceNatives;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 
@@ -10,32 +10,16 @@ import java.util.*;
  * @author lwh
  * @date 2022/1/8 10:05
  **/
+@Slf4j
 public class Test {
     public static void main(String[] args) {
-        // log.info("^ 运算：{}", 15 & ("郭德纲".hashCode() ^ ("郭德纲".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("彭于晏".hashCode() ^ ("彭于晏".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("李小龙".hashCode() ^ ("李小龙".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("张三".hashCode() ^ ("张三".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("李四".hashCode() ^ ("李四".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("王五".hashCode() ^ ("王五".hashCode() >>> 16)));
-        // log.info("^ 运算：{}", 15 & ("赵六".hashCode() ^ ("赵六".hashCode() >>> 16)));
-        //
-        // log.info("同或运算：{}", 15 & ~("郭德纲".hashCode() ^ ("郭德纲".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("彭于晏".hashCode() ^ ("彭于晏".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("李小龙".hashCode() ^ ("李小龙".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("张三".hashCode() ^ ("张三".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("李四".hashCode() ^ ("李四".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("王五".hashCode() ^ ("王五".hashCode() >>> 16)));
-        // log.info("同或运算：{}", 15 & ~("赵六".hashCode() ^ ("赵六".hashCode() >>> 16)));
         Hashtable table = new Hashtable();
         HashMap map = new HashMap();
 
         // 模拟随机hash
         final Random random = new Random();
         // 容量
-        final int n = 17;
+        final int n = 16;
 
         for (int i = 0; i < 100; i++) {
             // 正整数
@@ -44,7 +28,6 @@ public class Test {
             int result2 = hash & (n - 1);
             System.out.println((result1 == result2));
         }
-
     }
 
     public static void test1() {
@@ -59,5 +42,52 @@ public class Test {
         });
         System.out.println("执行了最后");
         list.forEach(System.out::println);
+    }
+
+    public static void test2() {
+        log.info("异或运算无符号右移：{}", 15 & ("郭德纲".hashCode() ^ ("郭德纲".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("彭于晏".hashCode() ^ ("彭于晏".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("李小龙".hashCode() ^ ("李小龙".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("张三".hashCode() ^ ("张三".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("李四".hashCode() ^ ("李四".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("王五".hashCode() ^ ("王五".hashCode() >>> 16)));
+        log.info("异或运算无符号右移：{}", 15 & ("赵六".hashCode() ^ ("赵六".hashCode() >>> 16)));
+        log.info("\n");
+        log.info("同或运算无符号右移：{}", 15 & ~("郭德纲".hashCode() ^ ("郭德纲".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("彭于晏".hashCode() ^ ("彭于晏".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("李小龙".hashCode() ^ ("李小龙".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("张三".hashCode() ^ ("张三".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("李四".hashCode() ^ ("李四".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("王五".hashCode() ^ ("王五".hashCode() >>> 16)));
+        log.info("同或运算无符号右移：{}", 15 & ~("赵六".hashCode() ^ ("赵六".hashCode() >>> 16)));
+        log.info("\n");
+        log.info("异或运算有符号右移：{}", 15 & ("郭德纲".hashCode() ^ ("郭德纲".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("彭于晏".hashCode() ^ ("彭于晏".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("李小龙".hashCode() ^ ("李小龙".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("蔡徐鸡".hashCode() ^ ("蔡徐鸡".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("张三".hashCode() ^ ("张三".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("李四".hashCode() ^ ("李四".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("王五".hashCode() ^ ("王五".hashCode() >> 16)));
+        log.info("异或运算有符号右移：{}", 15 & ("赵六".hashCode() ^ ("赵六".hashCode() >> 16)));
+        log.info("\n");
+        log.info("与运算无符号右移：{}", 15 & ("郭德纲".hashCode() & ("郭德纲".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("彭于晏".hashCode() & ("彭于晏".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("李小龙".hashCode() & ("李小龙".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("蔡徐鸡".hashCode() & ("蔡徐鸡".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("张三".hashCode() & ("张三".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("李四".hashCode() & ("李四".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("王五".hashCode() & ("王五".hashCode() >>> 16)));
+        log.info("与运算无符号右移：{}", 15 & ("赵六".hashCode() & ("赵六".hashCode() >>> 16)));
+        log.info("\n");
+        log.info("或运算无符号右移：{}", 15 & ("郭德纲".hashCode() | ("郭德纲".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("彭于晏".hashCode() | ("彭于晏".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("李小龙".hashCode() | ("李小龙".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("蔡徐鸡".hashCode() | ("蔡徐鸡".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("张三".hashCode() | ("张三".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("李四".hashCode() | ("李四".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("王五".hashCode() | ("王五".hashCode() >>> 16)));
+        log.info("或运算无符号右移：{}", 15 & ("赵六".hashCode() | ("赵六".hashCode() >>> 16)));
     }
 }
