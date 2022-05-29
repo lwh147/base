@@ -1,4 +1,4 @@
-package com.lwh147.observer;
+package com.lwh147.design.observer;
 
 import lombok.ToString;
 
