@@ -18,14 +18,14 @@ public abstract class AbstractFactory {
         }
     }
 
-    public abstract CPU getCPU(String brand);
-
-    public abstract Motherboard getMotherboard(String brand);
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         AbstractFactory factory = AbstractFactory.getFactory("CPU");
         assert factory != null;
         CPU cpu = factory.getCPU("AMD");
         cpu.make();
     }
+
+    public abstract CPU getCPU(String brand);
+
+    public abstract Motherboard getMotherboard(String brand);
 }

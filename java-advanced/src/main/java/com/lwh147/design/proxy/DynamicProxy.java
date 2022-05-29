@@ -2,9 +2,10 @@ package com.lwh147.design.proxy;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.lang.reflect.*;
-import java.util.HashMap;
-import java.util.Hashtable;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * jdk动态代理使用
@@ -23,6 +24,13 @@ public class DynamicProxy implements InvocationHandler {
         this.target = target;
     }
 
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        // Student target = new Student();
+        // DynamicProxy proxy = new DynamicProxy(target);
+        // Person studentProxy = (Person) proxy.newProxyInstance();
+        // studentProxy.identity();
+    }
+
     /**
      * 创建代理对象
      **/
@@ -39,12 +47,5 @@ public class DynamicProxy implements InvocationHandler {
         Object result = method.invoke(target, args);
         log.info("后置操作");
         return result;
-    }
-
-    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        // Student target = new Student();
-        // DynamicProxy proxy = new DynamicProxy(target);
-        // Person studentProxy = (Person) proxy.newProxyInstance();
-        // studentProxy.identity();
     }
 }

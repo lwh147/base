@@ -6,7 +6,7 @@ package com.lwh147.design.factory;
  * @author lwh
  * @date 2022/3/21 20:46
  **/
-public class INTEL implements CPU{
+public class INTEL implements CPU {
     @Override
     public void make() {
         System.out.println("新的Intel I5 12600k");

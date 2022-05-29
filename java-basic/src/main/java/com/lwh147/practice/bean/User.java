@@ -9,7 +9,7 @@ import com.lwh147.practice.util.ObjectAnalyzer;
  **/
 public class User {
     public static String test = "test";
-    private String name;
+    private String name = "user";
     private int age;
     private String sex;
     private String hobbies;

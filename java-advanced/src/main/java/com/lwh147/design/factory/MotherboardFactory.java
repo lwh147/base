@@ -6,7 +6,7 @@ package com.lwh147.design.factory;
  * @author lwh
  * @date 2022/3/21 21:02
  **/
-public class MotherboardFactory extends AbstractFactory{
+public class MotherboardFactory extends AbstractFactory {
     @Override
     public CPU getCPU(String brand) {
         return null;
