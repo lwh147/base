@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * jdk动态代理使用
+ * jdk动态代理使用，不管代理什么接口，一个类即可实现代理
  *
  * @author lwh
  * @date 2022/3/21 21:10
@@ -24,13 +24,6 @@ public class DynamicProxy implements InvocationHandler {
         this.target = target;
     }
 
-    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        // Student target = new Student();
-        // DynamicProxy proxy = new DynamicProxy(target);
-        // Person studentProxy = (Person) proxy.newProxyInstance();
-        // studentProxy.identity();
-    }
-
     /**
      * 创建代理对象
      **/
@@ -38,8 +31,22 @@ public class DynamicProxy implements InvocationHandler {
         return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
     }
 
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        Student student = new Student();
+        DynamicProxy studentProxyHandler = new DynamicProxy(student);
+        Person personProxy = (Person) studentProxyHandler.newProxyInstance();
+        personProxy.identity();
+        personProxy.name();
+
+        Cat cat = new Cat();
+        DynamicProxy catProxyHandler = new DynamicProxy(cat);
+        Animal animalProxy = (Animal) catProxyHandler.newProxyInstance();
+        animalProxy.species();
+        animalProxy.name();
+    }
+
     /**
-     * 对代理对象实现的所有接口方法的调用最终都会通过调用此方法
+     * 对代理对象所实现的接口方法的调用最终都会通过此方法
      **/
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

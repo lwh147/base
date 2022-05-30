@@ -1,19 +1,19 @@
 package com.lwh147.design.proxy;
 
 /**
- * 学生类
+ * 教师类
  *
  * @author lwh
- * @date 2022/3/14 11:38
+ * @date 2022/5/30 11:34
  **/
-public class Student implements Person {
+public class Teacher implements Person {
     @Override
     public void identity() {
-        System.out.println("学生");
+        System.out.println("老师");
     }
 
     @Override
     public void name() {
-        System.out.println("张三");
+        System.out.println("罗翔");
     }
 }

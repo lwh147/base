@@ -17,7 +17,6 @@ public class Subject {
 
     private int state;
 
-
     public Subject(int state) {
         this.state = state;
     }

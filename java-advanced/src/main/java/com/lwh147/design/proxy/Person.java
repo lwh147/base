@@ -1,12 +1,13 @@
 package com.lwh147.design.proxy;
 
 /**
- * TODO
+ * 人类接口
  *
  * @author lwh
  * @date 2022/3/14 11:37
  **/
 public interface Person {
     void identity();
-    // void name();
+
+    void name();
 }
